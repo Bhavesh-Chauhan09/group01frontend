@@ -13,28 +13,31 @@ const Login = ({ setUser }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/users/login', { email, password });
+      const res = await axios.post('https://group01-1.onrender.com/api/users/login', { email, password });
       const { username, _id, token } = res.data; // Make sure to include the token from the response
-
+  
       // Fetch user settings after successful login
-      const settingsRes = await axios.get(`http://localhost:5000/api/users/account-settings/${_id}`, {
+      const settingsRes = await axios.get(`https://group01-1.onrender.com/api/users/account-settings/${_id}`, {
         headers: { 'Authorization': token } // Include the token for authorization
       });
-
+  
       const userSettings = settingsRes.data; // Get the user settings
-
+  
       console.log('Login successful:', res.data);
-
+  
       // Save both user data and settings to local storage
       const user = { id: _id, username, token, ...userSettings };
       localStorage.setItem('user', JSON.stringify(user));
       setUser(user); // Update user state in App
-      navigate('/workouts');
+  
+      // Redirect to Account Settings page after login
+      navigate('/account-settings');
     } catch (err) {
       console.error(err);
       setError(err.response?.data?.error || 'Login failed.');
     }
   };
+  
 
   return (
     <div className="login-container">

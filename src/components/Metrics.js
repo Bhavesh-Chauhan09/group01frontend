@@ -1,15 +1,3 @@
-
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  PointElement,
-  Tooltip,
-  Legend,
-  ScatterController,
-  Filler,
-} from 'chart.js';
 import React, { useEffect, useState } from 'react';
 import { Bar, Scatter } from 'react-chartjs-2';
 import axios from 'axios';
@@ -35,7 +23,7 @@ const Metrics = () => {
 
     const fetchMetrics = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/metrics/calculate/${userId}`);
+        const res = await axios.get(`https://group01-1.onrender.com/api/metrics/calculate/${userId}`);
         const { totalDistance, caloriesBurned, weightLost } = res.data;
 
         setMetricsData({
@@ -44,7 +32,7 @@ const Metrics = () => {
           weightLost: weightLost,
         });
 
-        const goalsRes = await axios.get(`http://localhost:5000/api/goals/${userId}`);
+        const goalsRes = await axios.get(`https://group01-1.onrender.com/api/goals/${userId}`);
         const scatterPoints = goalsRes.data.map((goal) => ({
           x: goal.distance,
           y: goal.distance * (caloriesBurned / totalDistance),
@@ -76,7 +64,7 @@ const Metrics = () => {
   const scatterChartData = {
     datasets: [
       {
-        label: 'Calories vs Distance',
+        label: 'Calories(BURNT IN HUNDREDS) vs Distance',
         data: scatterData,
         backgroundColor: '#ff6666',
       },

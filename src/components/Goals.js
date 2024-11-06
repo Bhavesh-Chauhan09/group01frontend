@@ -11,6 +11,7 @@ const Goals = ({ userId }) => {
   const [totalTarget, setTotalTarget] = useState(0);
   const [totalProgress, setTotalProgress] = useState(0);
   const [areGoalsVisible, setAreGoalsVisible] = useState(false); // For toggling the visibility of goals
+  const [popupMessage, setPopupMessage] = useState(''); // Popup message state
 
   useEffect(() => {
     if (userId) {
@@ -20,7 +21,7 @@ const Goals = ({ userId }) => {
 
   const fetchGoals = async (userId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/goals/${userId}`);
+      const response = await fetch(`https://group01-1.onrender.com/api/goals/${userId}`);
       if (response.ok) {
         const data = await response.json();
 
@@ -43,16 +44,41 @@ const Goals = ({ userId }) => {
       console.error('Error fetching goals:', error);
     }
   };
+
+  const addGoal = async (newGoal) => {
+    try {
+      const response = await fetch(`https://group01-1.onrender.com/api/goals/${userId}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newGoal),
+      });
+      if (response.ok) {
+        await fetchGoals(userId); // Refresh goals list
+        setPopupMessage('Goal added successfully!'); // Show success message
+        setTimeout(() => setPopupMessage(''), 3000); // Hide popup after 3 seconds
+      } else {
+        setPopupMessage('Failed to add goal'); // Show error message
+        setTimeout(() => setPopupMessage(''), 3000); // Hide popup after 3 seconds
+      }
+    } catch (error) {
+      console.error('Error adding goal:', error);
+    }
+  };
+
   const deleteGoal = async (goalId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/goals/${goalId}`, {
+      const response = await fetch(`https://group01-1.onrender.com/api/goals/${goalId}`, {
         method: 'DELETE',
       });
       if (response.ok) {
         await fetchGoals(userId); // Refresh the goals after deletion
-        alert('Goal deleted successfully');
+        setPopupMessage('Goal deleted successfully!'); // Show success message
+        setTimeout(() => setPopupMessage(''), 3000); // Hide popup after 3 seconds
       } else {
-        alert('Failed to delete goal');
+        setPopupMessage('Failed to delete goal'); // Show error message
+        setTimeout(() => setPopupMessage(''), 3000); // Hide popup after 3 seconds
       }
     } catch (error) {
       console.error('Error deleting goal:', error);
@@ -102,7 +128,7 @@ const Goals = ({ userId }) => {
   return (
     <section className="goals">
       <h2>Goals</h2>
-      <AddGoal userId={userId} fetchGoals={() => fetchGoals(userId)} />
+      <AddGoal userId={userId} fetchGoals={() => fetchGoals(userId)} addGoal={addGoal} /> {/* Pass addGoal function to AddGoal */}
       
       <div className="chart-container">
         <h3>Achievements</h3>
@@ -142,6 +168,9 @@ const Goals = ({ userId }) => {
           </ul>
         </div>
       )}
+
+      {/* Popup Message */}
+      {popupMessage && <div className="popup">{popupMessage}</div>}
     </section>
   );
 };

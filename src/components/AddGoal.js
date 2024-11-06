@@ -9,6 +9,7 @@ const AddGoal = ({ userId, fetchGoals }) => {
   const [error, setError] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const [isAdvancedOpen, setIsAdvancedOpen] = useState(false);
+  const [popupMessage, setPopupMessage] = useState(''); // State for success/error message
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,7 +32,7 @@ const AddGoal = ({ userId, fetchGoals }) => {
       if (totalGoals) goalData.totalgoals = Number(totalGoals);
       if (progress) goalData.progress = Number(progress);
 
-      const response = await fetch('http://localhost:5000/api/goals', {
+      const response = await fetch('https://group01-1.onrender.com/api/goals', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -48,7 +49,8 @@ const AddGoal = ({ userId, fetchGoals }) => {
         setProgress('');
         setError('');
         setIsOpen(false);
-        alert('Goal added successfully!');
+        setPopupMessage('Goal added successfully!'); // Show success message
+        setTimeout(() => setPopupMessage(''), 3000); // Hide popup after 3 seconds
       } else {
         const data = await response.json();
         setError(data.error || 'Failed to add goal.');
@@ -115,6 +117,9 @@ const AddGoal = ({ userId, fetchGoals }) => {
           <button type="submit">Add Goal</button>
         </form>
       )}
+
+      {/* Popup Message */}
+      {popupMessage && <div className="popup">{popupMessage}</div>}
     </div>
   );
 };

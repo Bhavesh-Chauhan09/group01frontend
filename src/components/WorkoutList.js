@@ -36,30 +36,30 @@ const WorkoutList = ({ userId }) => {
       if (!userId) return;
       console.log("Fetching workouts for userId:", userId);
       try {
-        const response = await axios.get(`http://localhost:5000/api/workouts/${userId}`);
+        const response = await axios.get(`https://group01-1.onrender.com/api/workouts/${userId}`);
         setWorkouts(response.data);
-
+  
         // Prepare data for weight chart
         const newLabels = response.data.map(workout => new Date(workout.date).toLocaleDateString());
         const newWeightData = response.data.map(workout => workout.weight || 0);
         
-        setWeightData({
+        setWeightData(prevWeightData => ({
           labels: newLabels,
           datasets: [
             {
-              ...weightData.datasets[0],
+              ...prevWeightData.datasets[0],
               data: newWeightData,
             },
           ],
-        });
+        }));
       } catch (err) {
         console.error('Error fetching workouts:', err.response?.data || err.message);
       }
     };
-
+  
     fetchWorkouts();
   }, [userId]);
-
+  
   const handleWorkoutAdded = (newWorkout) => {
     setWorkouts(prevWorkouts => [...prevWorkouts, newWorkout]);
 
@@ -74,7 +74,7 @@ const WorkoutList = ({ userId }) => {
 
   const handleDeleteWorkout = async (workoutId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/workouts/${workoutId}`);
+      await axios.delete(`https://group01-1.onrender.com/api/workouts/${workoutId}`);
       const deletedWorkout = workouts.find(workout => workout._id === workoutId);
       
       setWorkouts(prevWorkouts => prevWorkouts.filter(workout => workout._id !== workoutId));
