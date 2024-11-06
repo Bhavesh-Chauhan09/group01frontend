@@ -1,0 +1,83 @@
+/*This is AccountSettings.css*/
+/* Container for the form and image */
+.account-settings-container {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space between form and image */
+  align-items: flex-start; /* Align items at the start */
+  height: 100%; /* Full screen height */
+  padding: 20px; /* Padding around the container */
+  box-sizing: border-box; /* Include padding in height */
+}
+
+/* Form container */
+.account-settings {
+  width: 400px; /* Width of the form container */
+  background-color: #f5f5f5; /* Background color for the form */
+  padding: 20px;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Box shadow */
+  margin-right: 20px; /* Space between form and image */
+  font-family: 'Courier New', Courier, monospace; /* Monospace font for the form */
+  color: #333; /* Dark color for text */
+}
+
+.image-container {
+  flex: 1; /* Allow image container to take remaining space */
+  display: flex; /* Flexbox for centering the image */
+  justify-content: flex-end; /* Align image to the right */
+  align-items: center; /* Center vertically */
+}
+
+.image-container img {
+  width: 500px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-left: 100px;
+  margin-top: 100px; /* Optional margin for spacing */
+}
+
+.form-group {
+  margin-bottom: 15px; /* Space between form groups */
+}
+
+.form-group label {
+  display: block; /* Block display for labels */
+  margin-bottom: 5px; /* Space below labels */
+}
+
+.form-group input {
+  width: 100%; /* Full width inputs */
+  padding: 8px; /* Padding inside inputs */
+  margin-bottom: 10px; /* Space below inputs */
+  border: 1px solid #ddd; /* Light border color */
+  border-radius: 4px; /* Rounded corners */
+  font-family: 'Courier New', Courier, monospace; /* Monospace font for inputs */
+  color: #333; /* Dark color for input text */
+}
+
+.save-btn {
+  padding: 10px 20px; /* Button padding */
+  background-color: #dc0909; /* Red background color */
+  color: white; /* Button text color */
+  border: none; /* No border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-family: 'Courier New', Courier, monospace; /* Monospace font for button */
+}
+
+.save-btn:hover {
+  background-color: #b00606; /* Darker red background on hover */
+}
+.popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #dc0909;
+  color: white;
+  padding: 30px 40px; /* Increase padding for larger size */
+  font-size: 18px; /* Increase font size */
+  border-radius: 10px; /* Make corners rounder */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Slightly bigger shadow */
+  z-index: 1000;
+  max-width: 400px; /* Max width to keep it from growing too large */
+  width: auto; /* Adjust width automatically */
+}

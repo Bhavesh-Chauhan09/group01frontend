@@ -1,0 +1,40 @@
+/*This is Metrics.css*/
+.metrics {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1; /* Allow it to take the remaining space */
+  font-family: 'Courier New', Courier, monospace; /* Updated font to monospace */
+}
+.metrics h2 {
+  margin-bottom: 80px; /* Space between heading and charts */
+}
+
+.chart-container {
+  width: 100%;
+  max-width: 1000px;
+  height: 400px; /* Set a reasonable max width for the chart */
+  padding: 10px;
+  margin-bottom: 40px; /* Spacing between charts */
+  background-color: #f3f3f3; /* Set background to white */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chart-container > h3 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: black; /* Set heading color to red */
+  font-family: 'Courier New', Courier, monospace; /* Monospace font for chart title */
+}
+
+.chart-container > canvas {
+  max-height: 300px;
+}
+
+@media (max-width: 768px) {
+  .chart-container {
+    max-width: 90%; /* Allow full width on smaller screens */
+  }
+}

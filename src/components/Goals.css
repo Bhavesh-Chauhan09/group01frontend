@@ -1,0 +1,86 @@
+.goals {
+  padding: 20px;
+  flex: 1; /* Allow it to take the remaining space */
+  background-color: #fff; /* White background for goals section */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  font-family: 'Courier New', Courier, monospace; /* Monospace font for goals section */
+  color: #333; /* Dark color for text */
+}
+
+.chart-container {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #f5f5f5; /* Light grey background for charts */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Courier New', Courier, monospace; /* Monospace font for chart container */
+  color: #333; /* Dark color for text */
+}
+
+.chart {
+  width: 100%;
+  height: 300px;
+}
+
+.toggle-goals-btn {
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 20px 0;
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+.toggle-goals-btn:hover {
+  background-color: white;
+  color: #ff0000;
+  border: 2px solid #ff0000; /* Add red border on hover */
+}
+
+.goals-list {
+  margin-top: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.goal-item {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-btn {
+  display: none; /* Hidden by default */
+  background-color: #ff3333;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: #ff0000;
+}
+
+.goal-item:hover .delete-btn {
+  display: inline-block; /* Show button on hover */
+}
+
+.goal-item:hover {
+  background-color: #f2f2f2; /* Change background on hover */
+}

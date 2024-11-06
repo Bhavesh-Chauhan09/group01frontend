@@ -1,0 +1,120 @@
+/* src/components/AddGoal.css */
+
+.add-goal {
+    background-color: #fff; /* White background */
+    padding: 20px; /* Increased padding for a better layout */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Softer shadow for depth */
+    margin-bottom: 20px; /* Space below the component */
+    transition: max-height 0.3s ease, padding 0.3s ease; /* Smooth transition */
+}
+
+.add-goal.closed {
+    max-height: 40px; /* Collapsed state */
+    overflow: hidden; /* Hide overflow when collapsed */
+    padding: 0; /* Remove padding when collapsed */
+}
+
+.add-goal.open {
+    max-height: 500px; /* Expand to a reasonable max height */
+}
+
+.toggle-button {
+    background-color: #ff3333; /* Red background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px; /* Consistent padding */
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 15px; /* Increased margin below the button */
+    width: 100%; /* Full width */
+    font-size: 16px; /* Increased font size */
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease; /* Smooth transition */
+}
+
+.toggle-button:hover {
+    background-color: white; /* Change background on hover */
+    color: #ff3333; /* Change text color on hover */
+    border: 2px solid #ff3333; /* Add border on hover */
+}
+
+.collapsed-message {
+    font-size: 18px; /* Font size for message */
+    color: #ff3333; /* Red color for message */
+    text-align: center; /* Center the message */
+    margin: 10px 0; /* Margin for spacing */
+}
+
+/* Form styles */
+.goal-form {
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+}
+
+.goal-form label {
+    margin-bottom: 5px; /* Space between label and input */
+    color: #333; /* Dark color for labels */
+    font-weight: bold; /* Bold labels */
+}
+
+.goal-form input {
+    padding: 10px; /* Padding inside inputs */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    margin-bottom: 15px; /* Space below inputs */
+    transition: border-color 0.3s ease; /* Smooth border color transition */
+}
+
+.goal-form input:focus {
+    border-color: #ff3333; /* Change border color on focus */
+    outline: none; /* Remove outline */
+}
+
+.goal-form button {
+    background-color: #ff3333; /* Red background for the submit button */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px; /* Consistent padding */
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.goal-form button:hover {
+    background-color: white; /* Change background on hover */
+    color: #ff3333; /* Change text color on hover */
+    border: 2px solid #ff3333; /* Add border on hover */
+}
+.toggle-advanced {
+    background-color: #ffcc00; /* Adjust color if needed */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 10px; /* Add some space below this button */
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+.toggle-advanced:hover {
+    background-color: white;
+    color: #ffcc00; /* Adjust hover color */
+    border: 2px solid #ffcc00; /* Adjust hover border */
+}
+.delete-button {
+    background-color: #ff3333; /* Red background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 8px 12px; /* Padding */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+    background-color: #ff6666; /* Lighter red on hover */
+}

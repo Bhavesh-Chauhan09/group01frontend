@@ -1,0 +1,28 @@
+/*This is Header.css*/
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f5f5f5; /* Light grey background for the header */
+  font-family: 'Courier New', Courier, monospace; /* Monospace font for header */
+}
+
+.logo {
+  font-size: 24px;
+  color: #ff3333; /* Red color for the logo text */
+  font-family: 'Courier New', Courier, monospace; /* Monospace font for logo */
+}
+
+.header-buttons button {
+  background-color: #ff3333; /* Red background for buttons */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: 'Courier New', Courier, monospace; /* Monospace font for buttons */
+  font-size: 16px; /* Adjusted button font size */
+}
+
+.header-buttons button:hover {
+  background-color: #c82333; /* Darker red on hover */
+}

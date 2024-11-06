@@ -1,0 +1,74 @@
+.register-container {
+  display: flex; /* Use flexbox for layout */
+  height: 100vh; /* Full height */
+}
+
+.register-wrapper {
+  display: flex; /* Flexbox layout for form and image */
+  flex: 1; /* Takes the full available width */
+}
+
+.register-form-wrapper {
+  max-width: 500px; /* Increase the maximum width for the form */
+  padding: 20px;
+  background-color: #fff; /* Set background to white */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  font-family: 'Courier New', Courier, monospace; /* Monospace font */
+  margin-right: 20px; /* Space between the form and the image */
+}
+
+.register-image-wrapper {
+  flex: 1; /* Allow this section to take the remaining space */
+  display: flex; /* Flexbox for centering the image */
+  justify-content: flex-start; /* Align image to the left */
+  align-items: center; /* Center image vertically */
+  background-color: #f4f4f4; /* Optional: light background for image area */
+}
+
+.register-image {
+  max-width: none; /* Allow the image to maintain its size */
+  height: 500px; /* Fixed height for the image */
+  width: 600px; /* Set the desired width for the image */
+  /* You can adjust this width as needed */
+}
+
+.register-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #ff3333; /* Changed to a bright red */
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Courier New', Courier, monospace; /* Monospace font for the button */
+}
+
+.register-btn:hover {
+  background-color: #b00606; /* Darker red on hover */
+}
+
+.register-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ff3333; /* Set heading color to red */
+  font-family: 'Courier New', Courier, monospace; /* Font family update */
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #000; /* Label color to black */
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: 'Courier New', Courier, monospace; /* Monospace font for input text */
+}

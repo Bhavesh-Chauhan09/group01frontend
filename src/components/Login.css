@@ -1,0 +1,87 @@
+/*This is Login.css*/
+body {
+  margin: 30;
+  font-family: 'Courier New', Courier, monospace; /* Updated font to monospace */
+  background-color: #fff; /* White background for the entire page */
+}
+
+.login-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5; /* White background for the entire page */
+}
+
+.login-form-wrapper {
+  background-color: #f5f5f5; /* Light grey background for the form */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  width: 400px; /* Fixed width for form */
+  z-index: 1; /* Ensure the form is on top */
+}
+
+h2 {
+  text-align: center;
+  color: #ff3333; /* Header color updated to red */
+  margin-bottom: 20px;
+  font-family: 'Courier New', Courier, monospace; /* Monospace font for heading */
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333; /* Dark color for text */
+  font-family: 'Courier New', Courier, monospace; /* Monospace font for label */
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: 'Courier New', Courier, monospace; /* Monospace font for input */
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #ff3333; /* Updated red button color */
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: 'Courier New', Courier, monospace; /* Monospace font for button */
+}
+
+.login-btn:hover {
+  background-color: #c82333; /* Darker red on hover */
+}
+
+p {
+  text-align: center;
+  margin-top: 10px;
+  color: #333; /* Dark color for text */
+  font-family: 'Courier New', Courier, monospace; /* Monospace font for text */
+}
+
+/* Image wrapper */
+.image-wrapper {
+  margin-left: 80px; /* Add space between form and image */
+  flex: 100; /* Allow the image to take up available space */
+}
+
+.login-image {
+  width: 800%; /* Make the image responsive */
+  height: 600px; /* Maintain aspect ratio */
+  max-width: 800px; /* Set a max-width for the image */
+  object-fit: cover; /* Ensure the image covers the space */
+}
